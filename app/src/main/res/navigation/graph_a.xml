@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
+    app:startDestination="@id/fragA">
+
+    <fragment
+        android:id="@+id/fragA"
+        android:name="com.test.navigation.FragA"
+        android:label="fragment1"
+        tools:layout="@layout/frag_a">
+        <action
+
+            android:id="@+id/action_A_to_B"
+            app:destination="@id/fragB"
+            app:enterAnim="@anim/enter_anim" />
+        <action
+            android:id="@+id/action_A_to_G"
+            app:destination="@+id/graph_g" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragB"
+        android:name="com.test.navigation.FragB"
+        android:label="fragment2"
+        tools:layout="@layout/frag_b">
+        <action
+            android:id="@+id/action_B_to_C"
+            app:destination="@id/fragC" />
+        <action
+            android:id="@+id/action_B_to_D"
+            app:destination="@id/graph_d" />
+        <deepLink app:uri="screen/frag/b/{data}" />
+    </fragment>
+
+    <include app:graph="@navigation/graph_d" />
+
+    <fragment
+        android:id="@+id/fragC"
+        android:name="com.test.navigation.FragC"
+        android:label="fragment3"
+        tools:layout="@layout/frag_c">
+        <action
+            android:id="@+id/action_C_to_A"
+            app:destination="@+id/fragA"
+            app:popUpTo="@+id/fragA"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="info"
+            android:defaultValue="@null"
+            app:argType="com.test.navigation.Info"
+            app:nullable="true" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="screen/frag/c/{data}" />
+    </fragment>
+
+    <navigation
+        android:id="@+id/graph_g"
+        app:startDestination="@id/fragG" >
+        <fragment
+            android:id="@+id/fragG"
+            android:name="com.test.navigation.FragG"
+            android:label="frag_g"
+            tools:layout="@layout/frag_g">
+            <action
+                android:id="@+id/action_G_to_H"
+                app:destination="@id/fragH" />
+        </fragment>
+        <fragment
+            android:id="@+id/fragH"
+            android:name="com.test.navigation.FragH"
+            android:label="frag_h"
+            tools:layout="@layout/frag_h" />
+    </navigation>
+</navigation>

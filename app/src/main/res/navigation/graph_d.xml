@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph_d"
+    app:startDestination="@id/fragD">
+
+    <action android:id="@+id/action_F" app:destination="@id/fragF" />
+
+    <fragment
+        android:id="@+id/fragD"
+        android:name="com.test.navigation.FragD"
+        android:label="frag_d"
+        tools:layout="@layout/frag_d">
+        <action
+            android:id="@+id/action_D_to_E"
+            app:destination="@id/fragE" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragE"
+        android:name="com.test.navigation.FragE"
+        android:label="frag_e"
+        tools:layout="@layout/frag_e">
+        <action
+            android:id="@+id/action_E_to_F"
+            app:destination="@id/fragF" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragF"
+        android:name="com.test.navigation.FragF"
+        android:label="frag_f"
+        tools:layout="@layout/frag_f" >
+        <deepLink
+            android:id="@+id/deepLink2"
+            app:uri="screen/frag/f/{data}" />
+    </fragment>
+</navigation>
