@@ -3,11 +3,11 @@ package com.test.navigation;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class DashScreen extends AppCompatActivity {
+public class ScreenB extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dash);
+        setContentView(R.layout.screen_b);
     }
 }

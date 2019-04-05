@@ -19,7 +19,7 @@
             app:destination="@+id/graph_g" />
         <action
             android:id="@+id/action_A_to_Dash"
-            app:destination="@id/dashScreen"
+            app:destination="@id/screenA"
             app:popUpTo="@+id/graph"
             app:popUpToInclusive="true" />
     </fragment>
@@ -78,7 +78,7 @@
             tools:layout="@layout/frag_h" />
     </navigation>
     <activity
-        android:id="@+id/dashScreen"
-        android:name="com.test.navigation.DashScreen"
-        android:label="DashScreen" />
+        android:id="@+id/screenA"
+        android:name="com.test.navigation.ScreenB"
+        android:label="Screen A" />
 </navigation>
