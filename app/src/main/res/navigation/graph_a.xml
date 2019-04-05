@@ -20,7 +20,8 @@
         <action
             android:id="@+id/action_A_to_Dash"
             app:destination="@id/dashScreen"
-            app:popUpTo="@+id/graph_g" />
+            app:popUpTo="@+id/graph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/fragB"
