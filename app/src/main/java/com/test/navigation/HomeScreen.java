@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
@@ -21,13 +20,10 @@ public class HomeScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
-        final Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        BottomNavigationView navigationView = findViewById(R.id.bottom);
-        NavController controller = Navigation.findNavController(this, R.id.navigation_main);
-        controller.addOnDestinationChangedListener((navController, navDestination, bundle) -> toolbar.setTitle("" + navDestination.getLabel()));
-        NavigationUI.setupWithNavController(navigationView, controller);
 
+        BottomNavigationView navigationView = findViewById(R.id.bottom);
+        NavController controller = Navigation.findNavController(this, R.id.main_host);
+        NavigationUI.setupWithNavController(navigationView, controller);
 
         Intent intent = getIntent();
         String action = intent.getAction();

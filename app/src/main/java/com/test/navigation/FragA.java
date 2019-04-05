@@ -1,6 +1,7 @@
 package com.test.navigation;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -25,6 +26,7 @@ public class FragA extends Fragment {
         View view = inflater.inflate(R.layout.frag_a, container, false);
         view.findViewById(R.id.button1a).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_A_to_B));
         view.findViewById(R.id.button1b).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_A_to_G));
+        view.findViewById(R.id.button1).setOnClickListener(v -> startActivity(new Intent(requireContext(),DashScreen.class)));
         return view;
     }
 

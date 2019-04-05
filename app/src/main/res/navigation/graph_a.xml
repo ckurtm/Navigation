@@ -13,11 +13,14 @@
         <action
 
             android:id="@+id/action_A_to_B"
-            app:destination="@id/fragB"
-            app:enterAnim="@anim/enter_anim" />
+            app:destination="@id/fragB" />
         <action
             android:id="@+id/action_A_to_G"
             app:destination="@+id/graph_g" />
+        <action
+            android:id="@+id/action_A_to_Dash"
+            app:destination="@id/dashScreen"
+            app:popUpTo="@+id/graph_g" />
     </fragment>
     <fragment
         android:id="@+id/fragB"
@@ -73,4 +76,8 @@
             android:label="frag_h"
             tools:layout="@layout/frag_h" />
     </navigation>
+    <activity
+        android:id="@+id/dashScreen"
+        android:name="com.test.navigation.DashScreen"
+        android:label="DashScreen" />
 </navigation>
